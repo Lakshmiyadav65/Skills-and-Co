@@ -240,9 +240,10 @@ p{margin:0 0 14px}
 
 /* press row — only four marks, so a static row beats a marquee here */
 .press-label{margin:36px 0 14px;font-size:11px;font-weight:700;letter-spacing:.14em;text-transform:uppercase;color:var(--muted)}
-.press{display:grid;grid-template-columns:repeat(2,1fr);gap:12px;max-width:420px}
-.press .logo-chip{height:76px;width:auto}
-.press .logo-chip img{max-height:32px}
+.press{display:grid;grid-template-columns:repeat(4,1fr);gap:12px}
+.press .logo-chip{width:auto;padding:18px 16px}
+/* trimmed files: the height cap sizes compact marks, the width cap sizes wordmarks */
+.press .logo-chip img{max-height:40px;max-width:min(100%,120px)}
 
 /* paired screenshots share one frame size so the row stays even */
 .shot{margin:0;border-radius:var(--r-card);overflow:hidden;background:var(--surface);aspect-ratio:4/3}
@@ -386,6 +387,7 @@ p{margin:0 0 14px}
   .g-4{grid-template-columns:1fr}
   .modules{grid-template-columns:1fr}
   .gallery{grid-template-columns:1fr}
+  .press{grid-template-columns:repeat(2,1fr)}
   .quote{width:min(330px,82vw)}
   .footer__top{grid-template-columns:1fr;gap:34px}
   .btn-row{flex-direction:column}

@@ -14,10 +14,10 @@
   ];
 
   var PRESS = [
-    ['press-asianage', 'The Asian Age'],
-    ['press-hindustanbytes', 'Hindustan Bytes'],
-    ['press-republic', 'Republic News India'],
-    ['press-entrepreneurhunt', 'Entrepreneur Hunt']
+    ['press-asianage-trimmed', 'The Asian Age'],
+    ['press-hindustanbytes-trimmed', 'Hindustan Bytes'],
+    ['press-republic-trimmed', 'Republic News India'],
+    ['press-entrepreneurhunt-trimmed', 'Entrepreneur Hunt']
   ];
 
   var QUOTES = [
