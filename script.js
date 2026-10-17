@@ -26,7 +26,7 @@
       name: 'Ram Kumar', role: 'Capgemini', img: 'person-ram.jpg'
     },
     {
-      text: 'As a lawyer I was never short of words — I was short of composure. The confidence modules gave me a way to steady myself before I speak, not just hope the nerves pass.',
+      text: 'As a lawyer I was never short of words. I was short of composure. The confidence modules gave me a way to steady myself before I speak, not just hope the nerves pass.',
       name: 'Vishal', role: 'Lawyer', img: 'person-vishal.jpg'
     },
     {
@@ -34,7 +34,7 @@
       name: 'Anand', role: 'Bengaluru → Devonport', img: 'person-anand.jpg'
     },
     {
-      text: 'The practice assignments are the real value. Live feedback every week meant I could not hide behind theory — I had to actually speak, and that is what fixed it.',
+      text: 'The practice assignments are the real value. Live feedback every week meant I could not hide behind theory. I had to actually speak, and that is what fixed it.',
       name: 'Priya S.', role: 'Programme participant', img: 'person-ram.jpg'
     },
     {
