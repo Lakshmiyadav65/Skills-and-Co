@@ -1,5 +1,5 @@
 /* Skills and Co. — site behaviour
-   Scroll reveal, marquee hydration, sticky nav, mobile menu. */
+   Scroll reveal, marquee hydration, sticky nav, mobile menu, version switch. */
 (function () {
   'use strict';
 
@@ -153,6 +153,35 @@
         nav.classList.remove('is-open');
         toggle.setAttribute('aria-expanded', 'false');
       }
+    });
+  }
+
+  /* ---------- design version switch ----------
+     V1 is the original sky-blue design; V2 is the client's navy-and-gold
+     revision. The head script has already applied the saved choice, so this
+     only syncs the button and records new choices (?v=2 makes a shareable link). */
+  var root = document.documentElement;
+  var ver = document.getElementById('verToggle');
+  var VER_TITLES = {
+    '1': 'Version 1: original sky-blue design. Click to see version 2.',
+    '2': 'Version 2: navy and gold, the corporate branding the client asked for. Click to go back to version 1.'
+  };
+  function setVersion(v, remember) {
+    root.setAttribute('data-version', v);
+    ver.setAttribute('aria-pressed', String(v === '2'));
+    ver.title = VER_TITLES[v];
+    if (!remember) return;
+    try { localStorage.setItem('sc-version', v); } catch (e) {}
+    try {
+      var url = new URL(window.location.href);
+      if (v === '2') url.searchParams.set('v', '2'); else url.searchParams.delete('v');
+      window.history.replaceState(null, '', url);
+    } catch (e) {}
+  }
+  if (ver) {
+    setVersion(root.getAttribute('data-version') === '2' ? '2' : '1', false);
+    ver.addEventListener('click', function () {
+      setVersion(root.getAttribute('data-version') === '2' ? '1' : '2', true);
     });
   }
 

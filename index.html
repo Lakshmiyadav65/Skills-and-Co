@@ -1,5 +1,5 @@
 <!doctype html>
-<html lang="en">
+<html lang="en" data-version="1">
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -9,7 +9,15 @@
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,500;0,600;1,400;1,500&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="styles.css">
-<script>document.documentElement.className+=' js';</script>
+<script>
+/* Pick the design version before first paint: ?v=2 in the URL wins, then the last choice. */
+(function (d) {
+  d.className += ' js';
+  var v = null;
+  try { v = new URLSearchParams(location.search).get('v') || localStorage.getItem('sc-version'); } catch (e) {}
+  d.setAttribute('data-version', v === '2' ? '2' : '1');
+})(document.documentElement);
+</script>
 </head>
 <body>
 
@@ -36,9 +44,12 @@
       <a href="#curriculum">Curriculum</a>
       <a href="#results">Results</a>
       <a href="#batches">Batches</a>
-      <a href="#pricing">Pricing</a>
+      <a href="#programmes">Programmes</a>
     </div>
-    <a class="btn btn--dark nav__cta" href="#pricing">Get Started</a>
+    <button class="ver" id="verToggle" type="button" aria-pressed="false" aria-label="Version 2 design" title="Version 1: original sky-blue design. Click to see version 2.">
+      <span>V1</span><span>V2</span>
+    </button>
+    <a class="btn btn--dark nav__cta" href="#programmes">Get Started</a>
     <button class="nav__toggle" id="navToggle" aria-label="Toggle menu" aria-expanded="false" aria-controls="navLinks"><span></span></button>
   </nav>
 </header>
@@ -54,7 +65,7 @@
       <h1 class="rv">Speak with <em>Confidence</em>,<br>Lead with Clarity</h1>
       <p class="lede rv">A live, 12-module English speaking and communication programme for professionals who already do great work — and now want the room to hear it.</p>
       <div class="btn-row rv">
-        <a class="btn btn--dark" href="#pricing">Enrol now</a>
+        <a class="btn btn--dark" href="#programmes">Enrol now</a>
         <a class="btn btn--light" href="#curriculum">See the curriculum</a>
       </div>
 
@@ -209,8 +220,8 @@
 </section>
 
 <!-- ============ CONFIDENCE / HUMAN SIDE ============ -->
-<section class="section" style="padding-top:0">
-  <div class="panel panel--sky">
+<section class="section section--human" style="padding-top:0">
+  <div class="panel panel--sky panel--soft">
     <div class="clouds"></div>
     <div class="panel__inner">
       <div class="head">
@@ -378,6 +389,7 @@
     </div>
     <div class="grid g-3 rv" style="margin-top:56px">
       <article class="bonus">
+        <img class="bonus__img" src="assets/img/bonus-interview.jpg" alt="Interview Cracking Cheatsheet product box: common interview questions, smart answer frameworks, dos and don'ts, tips for HR and technical rounds" width="800" height="800" loading="lazy" decoding="async">
         <div class="bonus__k">Bonus 1</div>
         <h3>Interview cracking cheatsheet</h3>
         <div class="bonus__body">
@@ -386,9 +398,10 @@
           <b>Save time and get leverage</b>
           <p>You get an edge over candidates who lack the practical knowledge.</p>
         </div>
-        <div class="bonus__worth"><s>₹3,446</s><span class="bonus__free">Free</span></div>
+        <div class="bonus__worth"><span>Included with your seat</span><span class="bonus__free">Free</span></div>
       </article>
       <article class="bonus">
+        <img class="bonus__img" src="assets/img/bonus-ebooks.jpg" alt="Public Speaking and Communication Mastery e-books bundle: a box set with its e-books on confidence, impact, body language, storytelling and listening" width="800" height="800" loading="lazy" decoding="async">
         <div class="bonus__k">Bonus 2</div>
         <h3>5 communication mastery e-books</h3>
         <div class="bonus__body">
@@ -397,9 +410,10 @@
           <b>Save time and get leverage</b>
           <p>An edge over people still piecing it together from YouTube.</p>
         </div>
-        <div class="bonus__worth"><s>₹5,122</s><span class="bonus__free">Free</span></div>
+        <div class="bonus__worth"><span>Included with your seat</span><span class="bonus__free">Free</span></div>
       </article>
       <article class="bonus">
+        <img class="bonus__img" src="assets/img/bonus-phrases.jpg" alt="DFY Communication Phrases product box: ready-to-use phrases for everyday situations, for students and working professionals" width="800" height="800" loading="lazy" decoding="async">
         <div class="bonus__k">Bonus 3</div>
         <h3>Done-for-you communication phrases</h3>
         <div class="bonus__body">
@@ -408,26 +422,25 @@
           <b>Saves time and effort</b>
           <p>Ready-to-use lines mean you never craft a response under pressure.</p>
         </div>
-        <div class="bonus__worth"><s>₹7,334</s><span class="bonus__free">Free</span></div>
+        <div class="bonus__worth"><span>Included with your seat</span><span class="bonus__free">Free</span></div>
       </article>
     </div>
-    <p class="note rv">Total bonus value <b>₹15,902</b> — included free for the first 15 enrolments.</p>
+    <p class="note rv">All three bonuses are <b>included free</b> for the first 15 enrolments.</p>
   </div>
 </section>
 
-<!-- ============ PRICING ============ -->
-<section class="section" id="pricing" style="padding-top:0">
+<!-- ============ PROGRAMMES ============ -->
+<section class="section" id="programmes" style="padding-top:0">
   <div class="panel panel--deep">
     <div class="panel__inner">
       <div class="head on-sky">
-        <span class="eyebrow rv"><span class="star"><svg><use href="#i-star"/></svg></span> Limited period offer</span>
+        <span class="eyebrow rv"><span class="star"><svg><use href="#i-star"/></svg></span> Course options</span>
         <h2 class="rv">The Ultimate English Speaking course</h2>
-        <p class="lede rv">Live classes with certification. Choose the plan that fits how fast you want to move.</p>
+        <p class="lede rv">Live classes with certification. Choose the track that fits how fast you want to move.</p>
       </div>
       <div class="plans rv">
         <article class="plan">
           <div class="plan__name"><span class="star"><svg><use href="#i-star"/></svg></span> 1 Month Access</div>
-          <div class="plan__price">₹4,500 <span>/ month</span></div>
           <p class="plan__meta">Perfect to get started and try it out.</p>
           <ul class="feats">
             <li><svg><use href="#i-check"/></svg><span>Live classes, 3 days a week</span></li>
@@ -440,12 +453,11 @@
         <article class="plan plan--hot">
           <span class="plan__badge">Most popular</span>
           <div class="plan__name"><span class="star"><svg><use href="#i-star"/></svg></span> 3 Months Mastery</div>
-          <div class="plan__price">₹10,000 <span>/ 3 months</span></div>
-          <p class="plan__meta">Instead of ₹13,500. <em>You save ₹3,500.</em></p>
+          <p class="plan__meta">The complete programme, <em>start to finish</em>.</p>
           <ul class="feats">
             <li><svg><use href="#i-check"/></svg><span>All 12 modules across 3 levels</span></li>
             <li><svg><use href="#i-check"/></svg><span>Certification on completion</span></li>
-            <li><svg><use href="#i-check"/></svg><span>All three enrolment bonuses (₹15,902 value)</span></li>
+            <li><svg><use href="#i-check"/></svg><span>All three enrolment bonuses</span></li>
             <li><svg><use href="#i-check"/></svg><span>Interview and presentation practice rounds</span></li>
             <li><svg><use href="#i-check"/></svg><span>Lifetime student community access</span></li>
           </ul>
@@ -469,7 +481,7 @@
         <div><b>Scan to enrol</b><span>Or write to us at www.skillsandco.in</span></div>
       </div>
       <div class="btn-row rv">
-        <a class="btn btn--dark" href="#pricing">See plans</a>
+        <a class="btn btn--dark" href="#programmes">See programmes</a>
         <a class="btn btn--light" href="https://www.skillsandco.in" target="_blank" rel="noopener">Visit skillsandco.in</a>
       </div>
     </div>
@@ -497,7 +509,7 @@
           <li><a href="#curriculum">Curriculum</a></li>
           <li><a href="#curriculum">12 modules</a></li>
           <li><a href="#batches">Batches</a></li>
-          <li><a href="#pricing">Pricing</a></li>
+          <li><a href="#programmes">Programmes</a></li>
         </ul>
       </div>
       <div>
