@@ -444,3 +444,27 @@ p{margin:0 0 14px}
 
 [data-version="2"] .plan--hot{outline-color:var(--gold)}
 [data-version="2"] .plan__badge{background:var(--gold);color:var(--navy-deep)}
+
+/* ============================================================
+   Legal pages: terms.html, privacy.html, refund-policy.html.
+   A short deep panel for the title, then one readable column.
+   Built from the tokens above, so V1 and V2 both apply.
+   ============================================================ */
+.legal-hero .panel__inner{padding-top:clamp(56px,7vw,88px);padding-bottom:clamp(48px,6vw,72px)}
+.legal-hero h1{font-size:clamp(34px,5vw,60px)}
+.legal-hero .lede{color:rgba(255,255,255,.88)}
+.legal{width:min(760px,100% - var(--gutter)*2);margin-inline:auto;padding-top:clamp(48px,6vw,72px)}
+.legal h2{font-size:clamp(24px,2.6vw,31px);margin:48px 0 14px}
+.legal h3{font-size:19px;margin:26px 0 10px}
+.legal p,.legal li{color:var(--body);font-size:16px;line-height:1.75}
+.legal ul{margin:0 0 16px;padding-left:1.3em}
+.legal li{margin-bottom:6px}
+.legal strong{color:var(--ink);font-weight:600}
+.legal a{color:var(--accent);text-decoration:underline;text-underline-offset:3px}
+.legal__summary{background:var(--surface);border-radius:var(--r-card);padding:22px clamp(20px,3vw,30px);margin-bottom:8px}
+.legal__summary p:last-child,.legal__summary ul:last-child{margin-bottom:0}
+.nav__links a[aria-current="page"]{background:var(--surface);color:var(--ink)}
+
+/* footer bar: the copyright and the legal links sit together, in the bar's own type */
+.footer__legal{display:flex;flex-wrap:wrap;align-items:center;gap:6px 18px}
+.footer__bar a{color:inherit;font-size:inherit}
